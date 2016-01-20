@@ -1,0 +1,154 @@
+var numbers = [1,12,4,18,9,7,11,3,101,5,6];
+
+var strings = ['this','is','a','collection','of','words'];
+
+
+//Question 1
+
+var largestValue = numbers.reduce(function(previous,current){
+    return previous > current ? previous : current;
+});
+
+console.log('largest number: ' + largestValue);
+
+
+// Question 2
+
+var longest = strings.reduce(function(previous,current){
+    return previous.length > current.length ? previous : current;
+});
+
+console.log('longest word: ' + longest);
+
+
+//Question 3 - Filter all even numbers with array.filter
+
+var evens = numbers.filter(function(x){
+    return x%2 === 0;
+});
+
+
+console.log('even numbers: ' + evens);
+
+
+//Question 4 - Filter all odd numbers with array.filter
+
+var odds = numbers.filter(function(x){
+    return x%2 === 1;
+});
+
+
+console.log('odd numbers: ' + odds);
+
+
+//Question 5 - Filter all words containing 'is' with array.filter
+
+var wordsWithIs = strings.filter(function(is){
+    return is.indexOf('is') !== -1;
+});
+
+
+console.log('words containing is: ' + wordsWithIs);
+
+
+//Question 6 - Return array with all numbers squared
+
+var squared = numbers.map(function square(x){
+    return x*x;
+});
+
+console.log('squared array: ' + squared);
+
+
+//Question 7 - Assert all numbers are divisible by 3 with array.every
+
+var divisibleByThree = numbers.every(function(x) {
+    return x%3 === 0;
+});
+
+
+console.log('All numbers divisible by three: ' + divisibleByThree);
+
+//Question 8 - Zip two arrays together with array.join
+
+var joined = evens.concat(odds).join();
+
+
+console.log('joined even and odd arrays: ' + joined);
+
+
+
+//Question 9 - Sort the joined array from smallest to largest
+
+var united = joined.split(",");
+
+var sorted = united.sort(function(x,y) {
+    return x - y;
+});
+
+
+console.log('sorted array ' + sorted);
+
+
+//Question 10 - remove the last word from strings array
+
+var lastWord = strings.pop();
+
+console.log('popped word: ' + lastWord);
+
+
+//Question 11 - put "yeah" in the array
+
+strings.push("yeah")
+
+console.log('strings: ' + strings);
+
+
+//Question 12 - remove the first word in the array
+
+var word = strings.shift();
+
+console.log('removed from start: ' + word);
+console.log('strings: ' + strings);
+
+
+//Question 13 - place a new word 'this' at the start of the array
+
+strings.unshift("this");
+
+console.log('added to start: ' + 'this');
+console.log('strings: ' + strings);
+
+
+//Question 14 - grab a subset of first 3 elements
+
+var sliced = strings.slice(0,3);
+
+
+console.log('subset: '  + sliced);
+console.log('strings: ' + strings);
+
+
+//Question 15 - replace 1st 3 elements with "test" and "123"
+
+var x = strings.splice(0,3,"test","123");
+
+console.log('removed: ' + x + ' and replaced with test, 123');
+console.log(strings);
+
+
+//Question 16 -
+
+var customers = [
+    { firstname : 'Joe',  lastname : 'Blogs'},
+    { firstname : 'John', lastname : 'Smith'},
+    { firstname : 'Dave', lastname : 'Jones'},
+    { firstname : 'Jack', lastname : 'White'}
+];
+
+var result = [
+    { name : 'Jack White'},
+    { name : 'Joe Blogs'},
+    { name : 'John Smith'}
+];
+
